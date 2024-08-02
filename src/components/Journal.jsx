@@ -6,6 +6,12 @@ import image1 from '../assets/image1.jpeg';
 import image2 from '../assets/image2.jpeg';
 import image3 from '../assets/image3.jpeg';
 import image4 from '../assets/image4.jpeg';
+import image5 from '../assets/mama&me1.jpeg';
+import image6 from '../assets/mama&me2.jpeg';
+import image7 from '../assets/mama&me3.jpeg';
+import image8 from '../assets/mama&me4.jpeg';
+import image9 from '../assets/mama&me5.jpeg';
+
 
 const Journal = () => {
   const entries = [
@@ -30,6 +36,36 @@ const Journal = () => {
     {
       id: 4,
       image: image4,
+      title: 'Another Celebration',
+      description: 'Another special moment captured!',
+    },
+    {
+      id: 5,
+      image: image5,
+      title: 'Another Celebration',
+      description: 'Another special moment captured!',
+    },
+    {
+      id: 6,
+      image: image6,
+      title: 'Another Celebration',
+      description: 'Another special moment captured!',
+    },
+    {
+      id: 7,
+      image: image7,
+      title: 'Another Celebration',
+      description: 'Another special moment captured!',
+    },
+    {
+      id: 8,
+      image: image8,
+      title: 'Another Celebration',
+      description: 'Another special moment captured!',
+    },
+    {
+      id: 9,
+      image: image9,
       title: 'Another Celebration',
       description: 'Another special moment captured!',
     },
