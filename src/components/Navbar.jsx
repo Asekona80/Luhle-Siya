@@ -18,7 +18,7 @@ const Navbar = () => {
       }
     };
 
-    handleResize(); // Check initial screen width
+    handleResize();
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
 
@@ -29,13 +29,13 @@ const Navbar = () => {
   }, []);
 
   const handleNav = () => {
-    setNav(!nav); // Toggle the nav state when menu icon is clicked
+    setNav(!nav);
   };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section with the specified ID
+      element.scrollIntoView({ behavior: 'smooth' });
     }
     closeNav();
   };
@@ -45,13 +45,16 @@ const Navbar = () => {
   };
 
   return (
-    <div 
-      className={`md:flex justify-between items-center mx-auto px-4 py-4 text-white font-semibold transition-all duration-500 ease-in-out ${isDesktop && 'sticky top-0 z-50'} ${isSticky && 'shadow-md'}`}
+    <div
+      className={`md:flex justify-between items-center mx-auto px-4 py-4 text-white font-semibold transition-all duration-500 ease-in-out ${
+        isDesktop ? 'sticky top-0 z-50' : ''
+      } ${isSticky ? 'shadow-md' : ''}`}
       style={{
-        height: '60px', // Adjust based on your design
-        position: 'fixed', // Ensures the navbar is always on top
-        width: '100%', // Full width
-        zIndex: 1000, // Ensures the navbar is above other content
+        height: '60px',
+        position: 'fixed',
+        width: '100%',
+        zIndex: 1000,
+        backgroundColor: isSticky ? '#235347' : 'transparent',
       }}
     >
       <div className="md:hidden flex justify-end mr-4">

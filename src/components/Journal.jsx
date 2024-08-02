@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Journal.css'; 
 
 // Import local images
@@ -8,9 +8,6 @@ import image3 from '../assets/image3.jpeg';
 import image4 from '../assets/image4.jpeg';
 
 const Journal = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); 
-  const [flippedCard, setFlippedCard] = useState(null);
-
   const entries = [
     {
       id: 1,
@@ -38,27 +35,12 @@ const Journal = () => {
     },
   ];
 
-  const handleFlip = (index) => {
-    // Toggle flip card visibility
-    if (flippedCard === index) {
-      setFlippedCard(null);
-    } else {
-      setFlippedCard(index);
-
-      // Automatically move to the next entry after flipping
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % entries.length);
-        setFlippedCard(null); 
-      }, 1500); 
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header Section */}
-      <header className="bg-purple-300 py-6 text-center">
+      <header className="bg-B7E4C7 py-6 text-center">
         <img 
-          src={image1} // Use a local image for the header
+          src={image1}
           alt="Cute Baby"
           className="w-32 h-32 mx-auto rounded-full"
         />
@@ -67,25 +49,19 @@ const Journal = () => {
 
       {/* Journal Entries Section */}
       <main className="p-6">
-        <div className="flex flex-col items-center">
-          <div
-            className={`flip-card ${flippedCard === currentIndex ? 'flipped' : ''}`}
-            onClick={() => handleFlip(currentIndex)}
-          >
-            <div className="flip-card-inner">
-              <div className="flip-card-front bg-white p-4 rounded-lg shadow-md">
-                <img 
-                  src={entries[currentIndex].image}
-                  alt={`Entry ${entries[currentIndex].id}`}
-                  className="w-full h-40 object-cover rounded-lg"
-                />
-                <h2 className="text-2xl font-semibold mt-2">{entries[currentIndex].title}</h2>
-              </div>
-              <div className="flip-card-back bg-white p-4 rounded-lg shadow-md">
-                <p className="text-gray-600 mt-2">{entries[currentIndex].description}</p>
+        <div className="card-container">
+          {entries.map((entry) => (
+            <div key={entry.id} className="flip-card">
+              <img 
+                src={entry.image}
+                alt={`Entry ${entry.id}`}
+              />
+              <div className="flip-card-overlay">
+                <h2>{entry.title}</h2>
+                <p>{entry.description}</p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </main>
     </div>

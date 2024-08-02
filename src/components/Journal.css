@@ -1,44 +1,119 @@
-.flip-card {
-  width: 100%;
-  height: 100%;
-  perspective: 1500px; /* Adjust perspective to control depth */
+.min-h-screen {
+  min-height: 100vh;
 }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.bg-gray-100 {
+  background-color: #f7fafc;
 }
 
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
+.text-gray-800 {
+  color: #2d3748;
 }
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+.bg-113B08 {
+  background-color: #113B08;
 }
 
-.flip-card-front {
-  background-color: #fff;
-  color: black;
-  z-index: 2; /* Ensure it’s on top when facing */
-  transform: rotateY(0deg);
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
-.flip-card-back {
-  background-color: #f8f8f8;
-  color: black;
-  transform: rotateY(180deg);
+.text-center {
+  text-align: center;
 }
 
-.flip-card-inner {
+.w-32 {
+  width: 8rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.card-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+}
+
+.flip-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.flip-card:hover img {
+  transform: scale(1.05);
+}
+
+.flip-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.flip-card:hover .flip-card-overlay {
+  transform: translateY(0);
+}
+
+.flip-card-overlay h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.flip-card-overlay p {
+  font-size: 16px;
 }
