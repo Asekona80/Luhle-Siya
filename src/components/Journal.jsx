@@ -74,7 +74,7 @@ const Journal = () => {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header Section */}
-      <header className="bg-B7E4C7 py-6 text-center">
+      <header className="bg-18392B py-6 text-center">
         <img 
           src={image1}
           alt="Cute Baby"
