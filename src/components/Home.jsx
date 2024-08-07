@@ -6,8 +6,8 @@ const Home = () => {
   const [animationDelayed, setAnimationDelayed] = useState(true);
 
   useEffect(() => {
-    const typingDelay = 200;
-    const text = ["WELCOME TO", "BABY'S", "PLAYFUL PAGE"];
+    const typingDelay = 100;
+    const text = ["BABY SIYA'S JOURNAL"];
     let index = 0;
     let charIndex = 0;
 
@@ -35,7 +35,7 @@ const Home = () => {
     if (animationDelayed) {
       const iconSlideInterval = setTimeout(() => {
         setAnimationDelayed(false);
-      }, 1000); 
+      }, 1000);
 
       return () => clearTimeout(iconSlideInterval);
     }
@@ -44,33 +44,32 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="text-white h-screen bg-cover bg-center"
+      className="relative text-white h-screen bg-cover bg-center"
       style={{
         backgroundImage: `url(${hero})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center 30%', // Adjust the vertical position of the background image
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <div 
-        className="absolute inset-0"
-        style={{   
-          zIndex: 1,
-        }}
-      />
-      <div className="relative z-10 max-w-full h-full mx-auto flex flex-col md:flex-row items-center justify-between px-4 mx-10 pt-16">
-        {/* Added pt-16 to add padding to the top of the content */}
-        <div className="order-2 md:order-1 mt-10">
-          <p className="font-italic italic text-xl p-1">NIKOLUHLE-SIYAMTHANDA</p>
-          <h1 className="font-bold text-2xl md:text-4xl sm:text-3xl md:py-6 animate-text-slide"> BABY'S JOURNAL</h1>
+      {/* Transparent overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-20 z-0" />
 
-          <div className="font-bold text-2xl md:text-3xl sm:text-2xl md:py-6">
-            <span className={`inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden ${animationDelayed ? 'animate-text-slide' : ''}`}>
-              <ul className="block animate-text-slide text-left leading-tight">
-                <li></li>
-              </ul>
-            </span>
+      {/* Card Container */}
+      <div className="relative flex items-center justify-center h-full z-50 p-4">
+        <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg max-w-md mx-auto">
+          <div className="text-center">
+            <p className="font-italic font-bold italic text-xl p-1">NIKOLUHLE-SIYAMTHANDA</p>
+            <div className="font-bold text-2xl md:text-3xl sm:text-2xl md:py-6">
+              <span className={`inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden`}>
+                <ul className="block text-left leading-tight">
+                  {textLoaded.map((line, index) => (
+                    <li key={index}>{line}</li>
+                  ))}
+                </ul>
+              </span>
+            </div>
           </div>
         </div>
       </div>

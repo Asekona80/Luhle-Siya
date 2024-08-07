@@ -1,64 +1,83 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Journal.css'; 
 
-// Import local images
+// Import local images and video
 import image1 from '../assets/image1.jpeg';
 import image2 from '../assets/image2.jpeg';
 import image3 from '../assets/image3.jpeg';
 import image4 from '../assets/image4.jpeg';
+import image6 from '../assets/mama&me2.jpeg';
+import image7 from '../assets/mama&me3.jpeg';
+import image10 from '../assets/Me1.jpeg';
+import video1 from '../assets/video1.mp4';
+import video2 from '../assets/video2.mp4';
+import video3 from '../assets/video3.mp4';
 
 const Journal = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); 
-  const [flippedCard, setFlippedCard] = useState(null);
-
   const entries = [
     {
       id: 1,
-      image: image1,
-      title: 'Welcome to the World',
-      description: 'Our little one took their first steps today! It was a joyful moment for the entire family.',
+      video: video1,
+      image: image3,
+      title: <strong>First Glimpse Of You 🍼👶</strong>,
+      description: 'Today, the scan showed the first time we saw you and heard your heartbeat. The video, taken when you were just 4 hours old, captures the precious moment you entered our world. You are already so loved.',
     },
     {
       id: 2,
-      image: image2,
-      title: 'First Words',
-      description: 'Baby said "Mama" for the first time today. Such a sweet moment!',
+      image: image1,
+      title: <strong>Welcome To The World 🌍❤️</strong>,
+      description: 'Today, we welcomed you to the world, and it was magical. Holding your tiny fingers and seeing your eyes filled us with joy. This picture captures the moment we brought you home. We cant wait to watch you grow and explore.',
     },
     {
       id: 3,
-      image: image3,
-      title: 'First Birthday',
-      description: 'Celebrated the first birthday with a big party. Baby enjoyed the cake and presents!',
+      image: image4,
+      title: <strong>Little Cute Feet, Big Dreams 👣💫</strong>,
+      description: 'These tiny toes are just the start of your lifetime of adventures. Each detail reminds us of how precious you are. As you grow, these small feet will lead you to amazing places. For now, we cherish these sweet footprints marking the beginning of your beautiful life.',
     },
     {
       id: 4,
-      image: image4,
-      title: 'Another Celebration',
-      description: 'Another special moment captured!',
+      image: image2,
+      title: <strong>My Beautiful Sunshine ☀️😊</strong>,
+      description: 'Another special moment! Our little sunshine blends her dad’s features with her own charm. Her smile and sparkling eyes light up our world, and watching her grow is a joy we treasure every day.',
+    },
+    {
+      id: 6,
+      video: video2,
+      title: <strong>Sleep Beauty 😴👶</strong>,
+      description: 'In this video, our little one drifts in and out of sleep, occasionally waking up with the cutest little cry. Even in her sleepy moments, she steals our hearts and fills our days with joy.',
+    },
+    {
+      id: 7,
+      image: image10,
+      title: <strong>We’re Growing 🌟👶</strong>,
+      description: 'Our little one is growing up so fast and getting prettier every day! Each moment is a new milestone, and we’re cherishing every bit of this amazing journey.'
+    },
+    {
+      id: 6,
+      video: video3,
+      title: <strong>Beautiful Moments 🌙✨</strong>,
+      description: 'In this video, our little one makes the most beautiful sounds and smiles warmly as she drifts in and out of sleep. Her sweet expressions and joyful noises fill our hearts with pure delight.'
+    },
+    {
+      id: 8,
+      image: image6,
+      title: <strong>First Moments Together 📸❤️</strong>,
+      description: 'A precious first picture capturing a special moment between Mama and me. This image marks the beginning of countless cherished memories and is a beautiful reminder of our bond.'
+    },
+    {
+      id: 9,
+      image: image7,
+      title: <strong>Beautiful Beginnings 💖👶</strong>,
+      description: 'Cherishing beautiful memories with my mother as we start this new journey with as a family. This moment marks the beginning of countless shared experiences and loving memories.'
     },
   ];
 
-  const handleFlip = (index) => {
-    // Toggle flip card visibility
-    if (flippedCard === index) {
-      setFlippedCard(null);
-    } else {
-      setFlippedCard(index);
-
-      // Automatically move to the next entry after flipping
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % entries.length);
-        setFlippedCard(null); 
-      }, 1500); 
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
+    <div id='journal' className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header Section */}
-      <header className="bg-purple-300 py-6 text-center">
+      <header className="bg-custom-green py-6 text-center text-gray-800">
         <img 
-          src={image1} // Use a local image for the header
+          src={image1}
           alt="Cute Baby"
           className="w-32 h-32 mx-auto rounded-full"
         />
@@ -67,25 +86,22 @@ const Journal = () => {
 
       {/* Journal Entries Section */}
       <main className="p-6">
-        <div className="flex flex-col items-center">
-          <div
-            className={`flip-card ${flippedCard === currentIndex ? 'flipped' : ''}`}
-            onClick={() => handleFlip(currentIndex)}
-          >
-            <div className="flip-card-inner">
-              <div className="flip-card-front bg-white p-4 rounded-lg shadow-md">
-                <img 
-                  src={entries[currentIndex].image}
-                  alt={`Entry ${entries[currentIndex].id}`}
-                  className="w-full h-40 object-cover rounded-lg"
-                />
-                <h2 className="text-2xl font-semibold mt-2">{entries[currentIndex].title}</h2>
-              </div>
-              <div className="flip-card-back bg-white p-4 rounded-lg shadow-md">
-                <p className="text-gray-600 mt-2">{entries[currentIndex].description}</p>
+        <div className="card-container">
+          {entries.map((entry) => (
+            <div key={entry.id} className="flip-card">
+              {entry.video && (
+                <video controls autoPlay muted>
+                  <source src={entry.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+              {entry.image && <img src={entry.image} alt={`Entry ${entry.id}`} />}
+              <div className="flip-card-overlay">
+                <h2>{entry.title}</h2>
+                <p>{entry.description}</p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </main>
     </div>

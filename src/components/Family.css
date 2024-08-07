@@ -1,0 +1,59 @@
+/* Family.css */
+.relative {
+    position: relative;
+    width: 100%;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+  }
+  
+  .transition-transform {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .bg-gray-800 {
+    background-color: #333;
+  }
+  
+  .text-white {
+    color: #fff;
+  }
+  
+  .p-2 {
+    padding: 0.5rem;
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .left-4 {
+    left: 1rem;
+  }
+  
+  .right-4 {
+    right: 1rem;
+  }
+  
+  .top-1 {
+    top: 50%;
+  }
+  
+  .transform {
+    transform: translateY(-50%);
+  }
+  
