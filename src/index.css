@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+=======
+>>>>>>> 009dabbf16f8e3b56a50ae621df1a857245a7161
 @keyframes slideIn {
     from {
       transform: translateY(20px);
@@ -20,6 +23,7 @@
   .animate-text-slide {
     animation: slideIn 1s ease-out;
   }
+<<<<<<< HEAD
   /* Family.css */
   .family-page {
     padding: 20px;
@@ -49,4 +53,6 @@
     font-size: 1.5em;
     color: #333;
   }
+=======
+>>>>>>> 009dabbf16f8e3b56a50ae621df1a857245a7161
   
