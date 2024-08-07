@@ -20,8 +20,6 @@ function App() {
         <Family/>
         <Footer/>
         <Contact/>
-       
-      
       </div>
     )
   }
