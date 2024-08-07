@@ -35,7 +35,7 @@ const Home = () => {
     if (animationDelayed) {
       const iconSlideInterval = setTimeout(() => {
         setAnimationDelayed(false);
-      }, 1000); // Adjust the delay as needed
+      }, 1000); 
 
       return () => clearTimeout(iconSlideInterval);
     }
@@ -63,7 +63,7 @@ const Home = () => {
         {/* Added pt-16 to add padding to the top of the content */}
         <div className="order-2 md:order-1 mt-10">
           <p className="font-italic italic text-xl p-1">NIKOLUHLE-SIYAMTHANDA</p>
-          <h1 className="font-bold text-2xl md:text-4xl sm:text-3xl md:py-6 animate-text-slide">MY BIRTH JOURNAL</h1>
+          <h1 className="font-bold text-2xl md:text-4xl sm:text-3xl md:py-6 animate-text-slide"> BABY'S JOURNAL</h1>
 
           <div className="font-bold text-2xl md:text-3xl sm:text-2xl md:py-6">
             <span className={`inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden ${animationDelayed ? 'animate-text-slide' : ''}`}>
