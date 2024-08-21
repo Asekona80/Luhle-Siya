@@ -18,8 +18,9 @@ function App() {
         <Home/>
         <Journal/>
         <Family/>
-        <Footer/>
         <Contact/>
+        <Footer/>
+      
       </div>
     )
   }

@@ -75,13 +75,13 @@ const Journal = () => {
   return (
     <div id='journal' className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header Section */}
-      <header className="bg-custom-green py-6 text-center text-gray-800">
+      <header className="bg-green py-6 text-center text-gray-800"style={{backgroundColor: '#e7f4f5'}}>
         <img 
           src={image1}
           alt="Cute Baby"
           className="w-32 h-32 mx-auto rounded-full"
         />
-        <h1 className="text-4xl font-bold mt-4">Welcome to Baby Siya's Journal</h1>
+        <h1 className="text-4xl font-bold mt-4">Welcome to Baby Siya's Journal</h1> 
       </header>
 
       {/* Journal Entries Section */}

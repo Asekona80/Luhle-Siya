@@ -46,49 +46,85 @@ const Navbar = () => {
 
   return (
     <div
-      className={`md:flex justify-between items-center mx-auto px-4 py-4 text-white font-semibold transition-all duration-500 ease-in-out ${
+      className={`md:flex justify-between items-center mx-auto px-4 py-4 font-semibold transition-all duration-500 ease-in-out ${
         isDesktop ? 'sticky top-0 z-50' : ''
-      } ${isSticky ? 'shadow-md' : ''}`}
+      } ${isSticky ? 'shadow-lg' : ''}`}
       style={{
-        height: '60px',
+        height: '70px',
         position: 'fixed',
         width: '100%',
         zIndex: 1000,
-        backgroundColor: isSticky ? '#235347' : 'transparent',
+        backgroundColor: isSticky ? '#00292b' : 'transparent', 
+        borderRadius: '15px', 
       }}
     >
       <div className="md:hidden flex justify-end mr-4">
-        <button onClick={handleNav} className="text-2xl cursor-pointer p-2">Menu</button>
+        <button onClick={handleNav} className="text-2xl cursor-pointer p-2 text-white">
+          🍔
+        </button>
       </div>
-      <div className={`md:hidden ${nav ? 'block fixed inset-0 bg-white rounded-full shadow-lg z-50' : 'hidden'}`}>
-        <div className='flex flex-col justify-center items-center'>
-          <button onClick={() => scrollToSection('home')} className='w-[75%] flex justify-center rounded-full shadow-lg bg-pink-200 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 hover:text-white'>
-            <span className='pl-4'>Home</span>
-          </button>
-          <button onClick={() => scrollToSection('journal')} className='w-[75%] flex justify-center rounded-full shadow-lg bg-blue-200 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 hover:text-white'>
-            <span className='pl-4'>Journal</span>
-          </button>
-          <button onClick={() => scrollToSection('family')} className='w-[75%] flex justify-center rounded-full shadow-lg bg-green-200 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 hover:text-white'>
-            <span className='pl-4'>Family</span>
-          </button>
-          <button onClick={() => scrollToSection('contact')} className='w-[75%] flex justify-center rounded-full shadow-lg bg-purple-200 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 hover:text-white'>
-            <span className='pl-4'>Contact</span>
-          </button>
-        </div>
-      </div>
+      <div className={`md:hidden ${nav ? 'block fixed inset-0 bg-green-100 rounded-full shadow-lg z-50 flex justify-center items-center' : 'hidden'}`}>
+      <div className='flex flex-col justify-center items-center w-[60%]'>
+  <button 
+    onClick={() => scrollToSection('home')} 
+    className='w-[60px] h-[60px] bg-red-500 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 relative flex justify-center items-center' 
+    style={{
+      clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%)',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    }}
+  >
+    <span className='text-white text-2xl'>🏠</span>
+  </button>
+  
+  <button 
+    onClick={() => scrollToSection('journal')} 
+    className='w-[60px] h-[60px] bg-blue-500 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 relative flex justify-center items-center' 
+    style={{
+      clipPath: '(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%)',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    }}
+  >
+    <span className='text-white text-2xl'>📓</span>
+  </button>
+  
+  <button 
+    onClick={() => scrollToSection('family')} 
+    className='w-[60px] h-[60px] bg-purple-500 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 relative flex justify-center items-center' 
+    style={{
+      clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%)',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    }}
+  >
+    <span className='text-white text-2xl'>👪</span>
+  </button>
+  
+  <button 
+    onClick={() => scrollToSection('contact')} 
+    className='w-[60px] h-[60px] bg-green-500 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 relative flex justify-center items-center' 
+    style={{
+      clipPath: '(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%)',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    }}
+  >
+    <span className='text-white text-2xl'>✉️</span>
+  </button>
+</div>
+
+</div>
+
 
       <div className="hidden md:flex items-center">
-        <button onClick={() => scrollToSection('home')} className='mr-6 hover:text-purple-400 transition-colors duration-300 ease-in'>
-          <span className='p-4'>Home</span>
+        <button onClick={() => scrollToSection('home')} className='mr-6 text-xl text-white hover:text-purple-400 transition-colors duration-300 ease-in'>
+          <span>🏠 Home</span>
         </button>
-        <button onClick={() => scrollToSection('journal')} className='mr-6 hover:text-purple-400 transition-colors duration-300 ease-in'>
-          <span className='p-4'>Journal</span>
+        <button onClick={() => scrollToSection('journal')} className='mr-6 text-xl text-white hover:text-blue-600 transition-colors duration-300 ease-in'>
+          <span>📓 Journal</span>
         </button>
-        <button onClick={() => scrollToSection('family')} className='mr-6 hover:text-purple-400 transition-colors duration-300 ease-in'>
-          <span className='p-4'>Family</span>
+        <button onClick={() => scrollToSection('family')} className='mr-6 text-xl text-white hover:text-green-600 transition-colors duration-300 ease-in'>
+          <span>👪 Family</span>
         </button>
-        <button onClick={() => scrollToSection('contact')} className='mr-6 hover:text-purple-400 transition-colors duration-300 ease-in'>
-          <span className='p-4'>Contact</span>
+        <button onClick={() => scrollToSection('contact')} className='mr-6 text-xl text-white hover:text-purple-600 transition-colors duration-300 ease-in'>
+          <span>✉️ Contact</span>
         </button>
       </div>
     </div>

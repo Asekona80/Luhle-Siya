@@ -2,10 +2,12 @@ import React from 'react';
 
 const Family = () => {
   return (
-    <div id='family' className="min-h-screen bg-gray-100 text-gray-800">
-      <header className="bg-custom-green py-6 text-center text-gray-800">
-      <h1 className="text-4xl font-bold">Meet the Family</h1>
-        <p className="mt-2">Here are the wonderful people who are part of your life.</p>
+    <div id='family' className="min-h-screen bg-gray-100 text-gray-800"  style={{
+      backgroundImage: 'radial-gradient(circle at center, #eacff8, #7c4fd0)',
+    }}>
+<header className="py-6 text-center text-gray-800" style={{ backgroundColor: '#e79aff' }}>
+<h1 className="text-4xl font-bold text-white">Meet the Family</h1>
+        <p className="mt-2 text-white">Here are the wonderful people who are part of your life.</p>
       </header>
 
       <main className="p-6">
