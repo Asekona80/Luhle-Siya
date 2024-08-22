@@ -3,9 +3,9 @@ import React from 'react';
 const Family = () => {
   return (
     <div id='family' className="min-h-screen bg-gray-100 text-gray-800"  style={{
-      backgroundImage: 'radial-gradient(circle at center, #eacff8, #7c4fd0)',
+      backgroundImage: 'radial-gradient(circle at center, #ececa3,#809c13, #419873)',
     }}>
-<header className="py-6 text-center text-gray-800" style={{ backgroundColor: '#e79aff' }}>
+<header className="py-6 text-center text-gray-800" style={{ backgroundColor: '#809c13' }}>
 <h1 className="text-4xl font-bold text-white">Meet the Family</h1>
         <p className="mt-2 text-white">Here are the wonderful people who are part of your life.</p>
       </header>

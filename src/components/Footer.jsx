@@ -21,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-custom-dark text-white py-4 relative">
+    <footer className="bg-[#00292b] text-white py-4 relative">
       <div className="container mx-auto text-center">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Siyamthanda-Nikoluhle. All rights reserved.
@@ -40,7 +40,7 @@ const Footer = () => {
               transition: 'background-color 0.3s ease-in-out'
             }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#7d8c3d'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#92A951'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00292b'}
             aria-label="Back to top"
           >
             ↑

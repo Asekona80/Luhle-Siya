@@ -1,5 +1,6 @@
 import React from 'react';
 import './Journal.css'; 
+import bow from '../assets/bow.png';
 
 // Import local images and video
 import image1 from '../assets/image1.jpeg';
@@ -75,7 +76,17 @@ const Journal = () => {
   return (
     <div id='journal' className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header Section */}
-      <header className="bg-green py-6 text-center text-gray-800"style={{backgroundColor: '#e7f4f5'}}>
+      <header className="bg-green py-6 text-center text-gray-800 relative" style={{ backgroundColor: '#809c13' }}>
+        <img 
+          src={bow}
+          alt="Bow"
+          className="absolute top-0 left-2 mt-6 ml-4 w-20 h-16"
+        />
+        <img 
+          src={bow}
+          alt="Bow"
+          className="absolute top-0 right-2 mt-6 mr-4 w-20 h-16"
+        />
         <img 
           src={image1}
           alt="Cute Baby"
