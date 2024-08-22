@@ -76,7 +76,7 @@ const Journal = () => {
   return (
     <div id='journal' className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header Section */}
-      <header className="bg-green py-6 text-center text-gray-800 relative" style={{ backgroundImage: 'radial-gradient(circle at center, #ececa3,#f5fdd5, #cbf5da)',
+      <header className="bg-green py-6 text-center text-gray-800 relative" style={{ backgroundImage: 'radial-gradient(circle at center, #ececa3,#cbf5da, #cbf5da)',
 }}>
         <img 
           src={bow}
